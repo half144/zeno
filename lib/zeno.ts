@@ -128,21 +128,21 @@ const zenoControllerInstance = new ZenoController();
  * their state, even without hierarchical relationship between them.
  *
  * @template T Type of value stored in the state
- * @param initialState Initial state value (optional)
  * @param key Unique key to identify the shared state
+ * @param initialState Initial state value (optional)
  * @returns [currentState, function to update the state]
  *
  * @example
  * // Component A
- * const [count, setCount] = useZeno(0, 'count');
+ * const [count, setCount] = useZeno('count', 0);
  *
  * // Component B (in another part of the application)
- * const [count, setCount] = useZeno(0, 'count');
+ * const [count, setCount] = useZeno('count', 0);
  * // Both components share the same value
  */
 export function useZeno<T>(
-  initialState: T | null = null,
-  key: string
+  key: string,
+  initialState: T | null = null
 ): [T | null, (newState: T) => void] {
   const zenoController = useRef<ZenoController>(zenoControllerInstance);
   const [internalState, setInternalState] = useState<T | null>(() => {

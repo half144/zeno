@@ -3,7 +3,7 @@ import { useZeno } from "../lib";
 
 // Header component uses the shared theme
 export function Header() {
-  const [theme] = useZeno("light", "theme");
+  const [theme] = useZeno("theme", "light");
 
   return (
     <header
@@ -20,7 +20,7 @@ export function Header() {
 
 // Theme toggle button component that changes the shared state
 export function ThemeToggle() {
-  const [theme, setTheme] = useZeno("light", "theme");
+  const [theme, setTheme] = useZeno("theme", "light");
 
   return (
     <button
@@ -41,7 +41,7 @@ export function ThemeToggle() {
 
 // Content component that also uses the shared theme
 export function Content() {
-  const [theme] = useZeno("light", "theme");
+  const [theme] = useZeno("theme", "light");
 
   return (
     <main

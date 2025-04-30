@@ -26,7 +26,7 @@ import { useZeno } from "zeno";
 
 // Component that displays the counter
 function CounterDisplay() {
-  const [counter] = useZeno(0, "counter");
+  const [counter] = useZeno("counter", 0);
 
   return (
     <div>
@@ -37,7 +37,7 @@ function CounterDisplay() {
 
 // Component with buttons to control the counter
 function CounterControls() {
-  const [counter, setCounter] = useZeno(0, "counter");
+  const [counter, setCounter] = useZeno("counter", 0);
 
   return (
     <div>
@@ -60,14 +60,14 @@ function App() {
 
 ### API
 
-#### `useZeno<T>(initialState, key)`
+#### `useZeno<T>(key, initialState)`
 
 Hook for managing shared state between components.
 
 **Parameters:**
 
-- `initialState` (T): Initial state value
 - `key` (string): Unique identifier for the shared state
+- `initialState` (T): Initial state value
 
 **Returns:**
 

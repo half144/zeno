@@ -9,7 +9,7 @@ type User = {
 
 // NavBar component shows login status
 export function NavBar() {
-  const [user] = useZeno<User | null>(null, "currentUser");
+  const [user] = useZeno<User | null>("currentUser", null);
 
   return (
     <nav
@@ -28,7 +28,7 @@ export function NavBar() {
 
 // Login form component that sets the user state
 export function LoginForm() {
-  const [user, setUser] = useZeno<User | null>(null, "currentUser");
+  const [user, setUser] = useZeno<User | null>("currentUser", null);
 
   const handleLogin = () => {
     // Simulate successful login
@@ -60,7 +60,7 @@ export function LoginForm() {
 
 // Dashboard component that shows user-specific content
 export function Dashboard() {
-  const [user] = useZeno<User | null>(null, "currentUser");
+  const [user] = useZeno<User | null>("currentUser", null);
 
   if (!user) {
     return (
