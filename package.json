@@ -1,0 +1,32 @@
+{
+  "name": "zeno",
+  "version": "1.0.0",
+  "description": "A simple and efficient library for shared state management between React components",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "state",
+    "management"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  }
+}
